@@ -1,0 +1,164 @@
+ERROR - 2022-12-12 05:39:53 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2022-12-12 05:39:53 --> 220 mx.zohomail.com SMTP Server ready December 12, 2022 3:39:48 AM PST
+
+hello: 250-smtp.passthru
+250-STARTTLS
+250 SIZE 53477376
+
+starttls: 220 Ready to start TLS.
+
+hello: 250-mx.zohomail.com Hello localhost (102.88.63.253 (102.88.63.253))
+250-AUTH LOGIN PLAIN
+250 SIZE 53477376
+
+from: 250 Sender <mzeremmanuel@gmail.com> OK
+
+to: 250 Recipient <mzerterdoo6@gmail.com> OK
+
+data: 354 Ok Send data ending with <CRLF>.<CRLF>
+
+553 Relaying disallowed as mzeremmanuel@gmail.com
+
+reset: 
+The following SMTP error was encountered: 
+The following SMTP error was encountered: 553 Relaying disallowed as mzeremmanuel@gmail.com
+
+CRITICAL - 2022-12-12 05:44:18 --> CodeIgniter\Router\RouteCollection::get(): Argument #1 ($from) must be of type string, array given, called in C:\wamp64\www\codeigniter_projects\event_registration_form\app\Config\Routes.php on line 49
+in SYSTEMPATH\Router\RouteCollection.php on line 884.
+ 1 APPPATH\Config\Routes.php(49): CodeIgniter\Router\RouteCollection->get([...], 'all-records', 'DashboardController::allRecords')
+ 2 SYSTEMPATH\Router\RouteCollection.php(645): CodeIgniter\CodeIgniter->Config\{closure}(Object(CodeIgniter\Router\RouteCollection))
+ 3 APPPATH\Config\Routes.php(52): CodeIgniter\Router\RouteCollection->group('dashboard', Object(Closure))
+ 4 SYSTEMPATH\CodeIgniter.php(789): require('APPPATH\\Config\\Routes.php')
+ 5 SYSTEMPATH\CodeIgniter.php(430): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')
+CRITICAL - 2022-12-12 05:44:22 --> CodeIgniter\Router\RouteCollection::get(): Argument #1 ($from) must be of type string, array given, called in C:\wamp64\www\codeigniter_projects\event_registration_form\app\Config\Routes.php on line 49
+in SYSTEMPATH\Router\RouteCollection.php on line 884.
+ 1 APPPATH\Config\Routes.php(49): CodeIgniter\Router\RouteCollection->get([...], 'all-records', 'DashboardController::allRecords')
+ 2 SYSTEMPATH\Router\RouteCollection.php(645): CodeIgniter\CodeIgniter->Config\{closure}(Object(CodeIgniter\Router\RouteCollection))
+ 3 APPPATH\Config\Routes.php(52): CodeIgniter\Router\RouteCollection->group('dashboard', Object(Closure))
+ 4 SYSTEMPATH\CodeIgniter.php(789): require('APPPATH\\Config\\Routes.php')
+ 5 SYSTEMPATH\CodeIgniter.php(430): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')
+ERROR - 2022-12-12 06:01:34 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2022-12-12 06:01:34 --> 220 mx.zohomail.com SMTP Server ready December 12, 2022 4:01:29 AM PST
+
+hello: 250-smtp.passthru
+250-STARTTLS
+250 SIZE 53477376
+
+starttls: 220 Ready to start TLS.
+
+hello: 250-mx.zohomail.com Hello localhost (102.88.63.253 (102.88.63.253))
+250-AUTH LOGIN PLAIN
+250 SIZE 53477376
+
+from: 250 Sender <mzeremmanuel@gmail.com> OK
+
+to: 250 Recipient <mzerterdoo6@gmail.com> OK
+
+data: 354 Ok Send data ending with <CRLF>.<CRLF>
+
+553 Relaying disallowed as mzeremmanuel@gmail.com
+
+reset: 
+The following SMTP error was encountered: 
+The following SMTP error was encountered: 553 Relaying disallowed as mzeremmanuel@gmail.com
+
+ERROR - 2022-12-12 06:02:55 --> mysqli_sql_exception: Unknown column 'attendeeID' in 'where clause' in C:\wamp64\www\codeigniter_projects\event_registration_form\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\wamp64\www\codeigniter_projects\event_registration_form\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\wamp64\www\codeigniter_projects\event_registration_form\vendor\codeigniter4\framework\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\wamp64\www\codeigniter_projects\event_registration_form\vendor\codeigniter4\framework\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\wamp64\www\codeigniter_projects\event_registration_form\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\wamp64\www\codeigniter_projects\event_registration_form\vendor\codeigniter4\framework\system\Validation\Rules.php(142): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\codeigniter_projects\event_registration_form\vendor\codeigniter4\framework\system\Validation\Validation.php(315): CodeIgniter\Validation\Rules->is_unique('100', 'attendeeID', Array, NULL, 'attendeeId_inpu...')
+#6 C:\wamp64\www\codeigniter_projects\event_registration_form\vendor\codeigniter4\framework\system\Validation\Validation.php(175): CodeIgniter\Validation\Validation->processRules('attendeeId_inpu...', 'attendeeId_inpu...', '100', Array, Array)
+#7 C:\wamp64\www\codeigniter_projects\event_registration_form\vendor\codeigniter4\framework\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#8 C:\wamp64\www\codeigniter_projects\event_registration_form\app\Controllers\CheckinController.php(30): CodeIgniter\Controller->validate(Array)
+#9 C:\wamp64\www\codeigniter_projects\event_registration_form\vendor\codeigniter4\framework\system\CodeIgniter.php(927): App\Controllers\CheckinController->checkin()
+#10 C:\wamp64\www\codeigniter_projects\event_registration_form\vendor\codeigniter4\framework\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CheckinController))
+#11 C:\wamp64\www\codeigniter_projects\event_registration_form\vendor\codeigniter4\framework\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\wamp64\www\codeigniter_projects\event_registration_form\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 C:\wamp64\www\codeigniter_projects\event_registration_form\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(46): require_once('C:\\wamp64\\www\\c...')
+#14 {main}
+CRITICAL - 2022-12-12 06:02:55 --> Unknown column 'attendeeID' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 1
+FROM `checkin`
+WHERE `attendeeID` = \'100\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `checkin`
+WHERE `attendeeID` = \'100\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `checkin`
+WHERE `attendeeID` = \'100\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `checkin`
+WHERE `attendeeID` = :attendeeID:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Validation\Rules.php(142): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\Validation\Validation.php(315): CodeIgniter\Validation\Rules->is_unique('100', 'attendeeID', [...], null, 'attendeeId_input')
+ 7 SYSTEMPATH\Validation\Validation.php(175): CodeIgniter\Validation\Validation->processRules('attendeeId_input', 'attendeeId_input', '100', [...], [...])
+ 8 SYSTEMPATH\Controller.php(140): CodeIgniter\Validation\Validation->run()
+ 9 APPPATH\Controllers\CheckinController.php(30): CodeIgniter\Controller->validate([...])
+10 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\CheckinController->checkin()
+11 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CheckinController))
+12 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')
+CRITICAL - 2022-12-12 06:27:22 --> Attempt to read property "data" on array
+in APPPATH\Controllers\CheckinController.php on line 49.
+ 1 APPPATH\Controllers\CheckinController.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "data" on array', 'APPPATH\\Controllers\\CheckinController.php', 49)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\CheckinController->checkin()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CheckinController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')
+CRITICAL - 2022-12-12 06:36:20 --> Array to string conversion
+in APPPATH\Controllers\CheckinController.php on line 59.
+ 1 APPPATH\Controllers\CheckinController.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'APPPATH\\Controllers\\CheckinController.php', 59)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\CheckinController->checkin()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CheckinController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')
+CRITICAL - 2022-12-12 07:03:07 --> Undefined variable $response
+in APPPATH\Controllers\CheckinController.php on line 88.
+ 1 APPPATH\Controllers\CheckinController.php(88): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $response', 'APPPATH\\Controllers\\CheckinController.php', 88)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\CheckinController->checkin()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CheckinController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')
+ERROR - 2022-12-12 07:13:37 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2022-12-12 07:13:37 --> 220 mx.zohomail.com SMTP Server ready December 12, 2022 5:13:33 AM PST
+
+hello: 250-smtp.passthru
+250-STARTTLS
+250 SIZE 53477376
+
+starttls: 220 Ready to start TLS.
+
+hello: 250-mx.zohomail.com Hello localhost (102.88.63.251 (102.88.63.251))
+250-AUTH LOGIN PLAIN
+250 SIZE 53477376
+
+from: 250 Sender <mzeremmanuel@gmail.com> OK
+
+to: 250 Recipient <mzerterdoo6@gmail.com> OK
+
+data: 354 Ok Send data ending with <CRLF>.<CRLF>
+
+553 Relaying disallowed as mzeremmanuel@gmail.com
+
+reset: 
+The following SMTP error was encountered: 
+The following SMTP error was encountered: 553 Relaying disallowed as mzeremmanuel@gmail.com
+
