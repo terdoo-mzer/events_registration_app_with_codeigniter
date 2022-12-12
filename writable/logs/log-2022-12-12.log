@@ -162,3 +162,76 @@ reset:
 The following SMTP error was encountered: 
 The following SMTP error was encountered: 553 Relaying disallowed as mzeremmanuel@gmail.com
 
+ERROR - 2022-12-12 08:36:58 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2022-12-12 08:36:58 --> 220 mx.zohomail.com SMTP Server ready December 12, 2022 6:36:53 AM PST
+
+hello: 250-smtp.passthru
+250-STARTTLS
+250 SIZE 53477376
+
+starttls: 220 Ready to start TLS.
+
+hello: 250-mx.zohomail.com Hello localhost (102.88.63.252 (102.88.63.252))
+250-AUTH LOGIN PLAIN
+250 SIZE 53477376
+
+from: 250 Sender <mzeremmanuel@gmail.com> OK
+
+to: 250 Recipient <mzerterdoo6@gmail.com> OK
+
+data: 354 Ok Send data ending with <CRLF>.<CRLF>
+
+553 Relaying disallowed as mzeremmanuel@gmail.com
+
+reset: 
+The following SMTP error was encountered: 
+The following SMTP error was encountered: 553 Relaying disallowed as mzeremmanuel@gmail.com
+
+CRITICAL - 2022-12-12 08:43:25 --> syntax error, unexpected token ")"
+in APPPATH\Controllers\CheckinController.php on line 64.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\CheckinController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\CheckinController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\CheckinController')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\CheckinController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(469): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')
+CRITICAL - 2022-12-12 12:40:33 --> Undefined variable $response
+in APPPATH\Controllers\CheckinController.php on line 57.
+ 1 APPPATH\Controllers\CheckinController.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $response', 'APPPATH\\Controllers\\CheckinController.php', 57)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\CheckinController->checkin()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CheckinController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')
+CRITICAL - 2022-12-12 12:48:13 --> Undefined variable $response
+in APPPATH\Controllers\CheckinController.php on line 58.
+ 1 APPPATH\Controllers\CheckinController.php(58): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $response', 'APPPATH\\Controllers\\CheckinController.php', 58)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\CheckinController->checkin()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CheckinController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')
+CRITICAL - 2022-12-12 12:48:28 --> Undefined variable $response
+in APPPATH\Controllers\CheckinController.php on line 58.
+ 1 APPPATH\Controllers\CheckinController.php(58): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $response', 'APPPATH\\Controllers\\CheckinController.php', 58)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\CheckinController->checkin()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CheckinController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')
+CRITICAL - 2022-12-12 13:42:54 --> Object of class CodeIgniter\Database\MySQLi\Result could not be converted to string
+in APPPATH\Controllers\CheckinController.php on line 73.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\CheckinController->checkin()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CheckinController))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')
+CRITICAL - 2022-12-12 14:05:24 --> Object of class CodeIgniter\Database\MySQLi\Result could not be converted to string
+in APPPATH\Controllers\CheckinController.php on line 64.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\CheckinController->checkin()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CheckinController))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')

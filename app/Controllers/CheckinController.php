@@ -11,7 +11,8 @@ use App\Models\CheckinModel;
 class CheckinController extends ResourceController
 {
     // Setup registration page
-    public function checkin() {
+    public function checkin()
+    {
 
         helper(['form']);
 
@@ -21,14 +22,16 @@ class CheckinController extends ResourceController
         $regModel = new RegistrationModel();
         $regMetaModel = new RegistrationMetaModel();
         $checkInModel = new CheckinModel();
+        $response = [];
 
-        if($_SERVER['REQUEST_METHOD'] === "POST") {
+        if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
             $rules = [
-                'attendeeId_input' => 'required|min_length[3]|max_length[3]|is_unique[checkin.attendee_ID]',
+                'attendeeId_input' => 'required|min_length[3]|max_length[10]',
             ];
 
-            if(! $this->validate($rules)) {
+            if (!$this->validate($rules)) {
+                echo 'invalid input';
                 $response = [
                     'status' => 400,
                     'message' => $this->validator->getErrors(),
@@ -44,25 +47,29 @@ class CheckinController extends ResourceController
                 $attd_reg = $regModel->find($attendeeId_input);
 
                 // if user exists then do something
-                if($attd_reg) {
+                if ($attd_reg) {
+               
                     // First retrieve the following details of that attendee
                     $email = $attd_reg['email'];
                     $phone = $attd_reg['phone'];
-                    $first_name =$attd_reg['first_name'];
+                    $first_name = $attd_reg['first_name'];
                     $last_name = $attd_reg['last_name'];
                     $attendee_id = $attd_reg['attendee_ID'];
 
-                    // Then Check to see if attendee ID is already logged in the checkin table
-                    // If already checked in then dont save into checkin table. Else save.
-                    // $checkedAttendee =$builder->select('attendee_ID')->where('attendee_ID', $attendeeId_input);
-                    $checkedAttendee = $checkInModel->find($attendeeId_input);
-                    print_r($checkedAttendee);
 
-                    // $checkedID = null;
-                    if($checkedAttendee) {
+                    // Check if the submitted validated id has been logged before
+                    $query   = $db->query("SELECT attendee_ID FROM checkin WHERE attendee_ID={$attendee_id}");
+                    $results = $query->getResult();
+                    // var_dump($query);
 
-                        echo "Sorry this ID is already checked In";
-
+                    if ($results) {
+                        $response = [
+                            'status' => 400,
+                            'message' => 'Sorry, this ID has been checked in already',
+                            'error' => true,
+                            'data' => []
+                        ];
+                        // echo "Sorry this ID is already checked In";
                     } else {
 
                         $data = [
@@ -75,43 +82,38 @@ class CheckinController extends ResourceController
 
                         // Insert data
                         $checkInModel->insert($data);
-                        echo "This attendee is checkedIn successfuly!";
-                    }
 
+                        $response = [
+                            'status' => 200,
+                            'message' => "The attendee ID {$data['attendee_ID']} belonging to {$data['last_name']} is checked in successfully",
+                            'error' => false,
+                            'data' => []
+                        ];
+                        // echo "This attendee is checkedIn successfuly!";
+                    }
                 } else {
                     echo 'Sorry this attendee is not registered';
                 }
-                // echo "<pre>";
-                // $response = [
-                //     'status' => 200,
-                //     'message' => 'Yayy',
-                //     'error' => false,
-                //     'data' => $attd_reg
-                // ];
-
             }
-
         }
 
-        // return $this->respondCreated($response);
+        return $this->respondCreated($response);
 
     }
 
     // Create a function to send mail containing participant attendance ID
-    function sendMail() { 
-        
+    function sendMail()
+    {
+
         $email = \Config\Services::email();
         $email->setTo('mzerterdoo6@gmail.com');
         $email->setFrom('mzeremmanuel@gmail.com', 'Techies Event Registration');
-        
+
         $email->setSubject("CodeIgniter Test");
         $email->setMessage("I am testing Codeigniter");
-        if ($email->send()) 
-		{
+        if ($email->send()) {
             echo 'Email successfully sent';
-        } 
-		else 
-		{
+        } else {
             $data = $email->printDebugger(['headers']);
             print_r($data);
         }

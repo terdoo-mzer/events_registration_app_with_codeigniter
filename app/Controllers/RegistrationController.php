@@ -90,7 +90,7 @@ class RegistrationController extends ResourceController
                        
 
                         // $this->sendMail($to, $attendee_ID, $message, $subject);
-                        $this->sendMail();
+                        // $this->sendMail();
                     }
                 } else {
                     $response = [
