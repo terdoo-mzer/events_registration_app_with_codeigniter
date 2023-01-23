@@ -46,9 +46,9 @@ $routes->match(['post', 'get'],'/register', 'PagesRenderer::formPage');
 // Admin Dashboard routes
 $routes->group('dashboard', function ($routes) {
     $routes->match(['get','post'],'check-in', 'CheckinController::checkin'); // This will be an api endpoint for the js form
-    $routes->match(['get', 'post'],'all-records', 'DashboardController::allRecords');
+    $routes->get('main', 'DashboardController::allRecords');
     $routes->get('registered', 'DashboardController::registered');
-    $routes->get('checked-in', 'DashboardController::checkedIn');
+    $routes->get('checked_in', 'DashboardController::checkedIn');
 });
 
 
