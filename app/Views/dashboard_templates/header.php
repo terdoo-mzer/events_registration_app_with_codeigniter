@@ -19,7 +19,7 @@
 
 <body>
   <ul>
-    <li><a class="active" href="check_in_participants.html">Check In Particpants</a></li>
-    <li><a href="registered_participants.html">Registered Participants</a></li>
-    <li><a href="checked_in_participants.html">Checked In Participants</a></li>
+    <li><a class="active" href="<?=base_url('dashboard/main')?>">Home</a></li>
+    <li><a href="<?=base_url('dashboard/registered')?>">Registered Participants</a></li>
+    <li><a href="<?=base_url('dashboard/checked_in')?>">Checked In Participants</a></li>
   </ul>
