@@ -11,8 +11,8 @@ class DashboardController extends BaseController
     public function allRecords()
     {
         echo view('dashboard_templates/header');
-        echo view('dashboard_templates/sidebar');
         echo view('dashboard/all_records');
+        echo view('dashboard_templates/footer');
     }
     public function checkIn()
     {
@@ -21,13 +21,13 @@ class DashboardController extends BaseController
 
     public function registered() {
         echo view('dashboard_templates/header');
-        echo view('dashboard_templates/sidebar');
         echo view('dashboard/registered');
+        echo view('dashboard_templates/footer');
     }
 
     public function checkedIn() {
         echo view('dashboard_templates/header');
-        echo view('dashboard_templates/sidebar');
         echo view('dashboard/checked_in');
+        echo view('dashboard_templates/footer');
     }
 }
