@@ -1,4 +1,4 @@
-  <script>
+  
     const checkinForm = document.querySelector("#checkinForm");
     const checkinBtn = document.querySelector('#checkin');
     const Toast = Swal.mixin({
