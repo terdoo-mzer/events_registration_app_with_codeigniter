@@ -11,7 +11,7 @@ class DashboardController extends BaseController
     public function allRecords()
     {
         echo view('dashboard_templates/header');
-        echo view('dashboard/all_records');
+        echo view('dashboard/main');
         echo view('dashboard_templates/footer');
     }
     public function checkIn()
