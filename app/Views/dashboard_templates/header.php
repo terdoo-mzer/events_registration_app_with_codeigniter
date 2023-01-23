@@ -19,6 +19,7 @@
 
 <body>
   <ul>
+
     <li><a class="active" href="<?=base_url('dashboard/main')?>">Home</a></li>
     <li><a href="<?=base_url('dashboard/registered')?>">Registered Participants</a></li>
     <li><a href="<?=base_url('dashboard/checked_in')?>">Checked In Participants</a></li>
