@@ -31,7 +31,7 @@ class CheckinController extends ResourceController
             ];
 
             if (!$this->validate($rules)) {
-                echo 'invalid input';
+             
                 $response = [
                     'status' => 400,
                     'message' => $this->validator->getErrors(),
@@ -92,7 +92,13 @@ class CheckinController extends ResourceController
                         // echo "This attendee is checkedIn successfuly!";
                     }
                 } else {
-                    echo 'Sorry this attendee is not registered';
+                    $response = [
+                        'status' => 400,
+                        'message' => 'Sorry this attendee is not registered',
+                        'error' => true,
+                        'data' => []
+                    ];
+                 
                 }
             }
         }

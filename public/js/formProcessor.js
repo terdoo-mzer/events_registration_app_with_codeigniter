@@ -63,20 +63,5 @@ const register = async () => {
    }
 };
 
-const checkIn = async () => {
-   try {
-      let response = await fetch('http://localhost:8080/dashboard/check-in', {
-         method: 'POST',
-         body: new FormData(form),
-      });
-
-      const result = await response.json();
-
-      console.log(result);
-   } catch (error) {
-      console.error();
-   }
-
-}
 
 

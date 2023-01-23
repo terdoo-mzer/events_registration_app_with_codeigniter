@@ -1,9 +1,12 @@
  
 <!----- Main/Home Dashboard page ------>
-
+<div class="checkin_error">
+  <div class="close_btn">x</div>
+  </div>
 <div class="form-container">
+  
     <form id="checkinForm" action="">
-      <input autofocus type="text" name="search" placeholder="Enter Particpant ID to checkin...">
+      <input autofocus type="text" name="attendeeId_input" placeholder="Enter Particpant ID to checkin...">
       <button type="submit" id="checkin">Check In</button>
     </form>
   </div>

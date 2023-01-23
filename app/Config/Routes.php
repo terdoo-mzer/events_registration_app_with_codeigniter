@@ -38,17 +38,17 @@ $routes->set404Override();
 // $routes->get('/', 'Home::index');
 
 // User Routes
-$routes->get('/', 'PagesRenderer::index');
+$routes->get('/', 'PagesRenderer::index'); // This route renders the home page on the user side
 // Form data processing script
-$routes->post('/create-reservation', 'RegistrationController::register');
-$routes->match(['post', 'get'],'/register', 'PagesRenderer::formPage');
+$routes->post('/create-reservation', 'RegistrationController::register'); // This endpoint is for attendee registration
+$routes->match(['post', 'get'],'/register', 'PagesRenderer::formPage'); // This route renders the register page/form
 
 // Admin Dashboard routes
 $routes->group('dashboard', function ($routes) {
-    $routes->match(['get','post'],'check-in', 'CheckinController::checkin'); // This will be an api endpoint for the js form
-    $routes->get('main', 'DashboardController::allRecords');
-    $routes->get('registered', 'DashboardController::registered');
-    $routes->get('checked_in', 'DashboardController::checkedIn');
+    $routes->post('check-in', 'CheckinController::checkin'); // This will be an api endpoint for the checkin form
+    $routes->get('main', 'DashboardController::allRecords'); // This route serves the dashnoard home page
+    $routes->get('registered', 'DashboardController::registered'); // This route serves the dashboard registered page
+    $routes->get('checked_in', 'DashboardController::checkedIn'); // This route serves the dashboard checkedin page
 });
 
 
