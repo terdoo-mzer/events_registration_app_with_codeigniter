@@ -53,3 +53,40 @@ in SYSTEMPATH/Database/BaseConnection.php on line 418.
 12 SYSTEMPATH/CodeIgniter.php(347): CodeIgniter\CodeIgniter->handleRequest()
 13 SYSTEMPATH/CLI/Console.php(48): CodeIgniter\CodeIgniter->run()
 14 ROOTPATH/spark(98): CodeIgniter\CLI\Console->run()
+ERROR - 2023-01-24 14:34:41 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: YES) in C:\wamp64\www\codeigniter_projects\events_registration_app_with_codeigniter\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:171
+Stack trace:
+#0 C:\wamp64\www\codeigniter_projects\events_registration_app_with_codeigniter\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(171): mysqli->real_connect('localhost', 'root', '#terdoo92A', 'events_mgt', 3306, '', 0)
+#1 C:\wamp64\www\codeigniter_projects\events_registration_app_with_codeigniter\vendor\codeigniter4\framework\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\wamp64\www\codeigniter_projects\events_registration_app_with_codeigniter\vendor\codeigniter4\framework\system\Database\BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\wamp64\www\codeigniter_projects\events_registration_app_with_codeigniter\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1614): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', NULL, false)
+#4 C:\wamp64\www\codeigniter_projects\events_registration_app_with_codeigniter\app\Controllers\Reg_and_checkin_data.php(25): CodeIgniter\Database\BaseBuilder->countAll()
+#5 C:\wamp64\www\codeigniter_projects\events_registration_app_with_codeigniter\vendor\codeigniter4\framework\system\CodeIgniter.php(927): App\Controllers\Reg_and_checkin_data->retrieveData()
+#6 C:\wamp64\www\codeigniter_projects\events_registration_app_with_codeigniter\vendor\codeigniter4\framework\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reg_and_checkin_data))
+#7 C:\wamp64\www\codeigniter_projects\events_registration_app_with_codeigniter\vendor\codeigniter4\framework\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\wamp64\www\codeigniter_projects\events_registration_app_with_codeigniter\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 C:\wamp64\www\codeigniter_projects\events_registration_app_with_codeigniter\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(46): require_once('C:\\wamp64\\www\\c...')
+#10 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in C:\wamp64\www\codeigniter_projects\events_registration_app_with_codeigniter\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:215
+Stack trace:
+#0 C:\wamp64\www\codeigniter_projects\events_registration_app_with_codeigniter\vendor\codeigniter4\framework\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\wamp64\www\codeigniter_projects\events_registration_app_with_codeigniter\vendor\codeigniter4\framework\system\Database\BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\wamp64\www\codeigniter_projects\events_registration_app_with_codeigniter\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1614): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', NULL, false)
+#3 C:\wamp64\www\codeigniter_projects\events_registration_app_with_codeigniter\app\Controllers\Reg_and_checkin_data.php(25): CodeIgniter\Database\BaseBuilder->countAll()
+#4 C:\wamp64\www\codeigniter_projects\events_registration_app_with_codeigniter\vendor\codeigniter4\framework\system\CodeIgniter.php(927): App\Controllers\Reg_and_checkin_data->retrieveData()
+#5 C:\wamp64\www\codeigniter_projects\events_registration_app_with_codeigniter\vendor\codeigniter4\framework\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reg_and_checkin_data))
+#6 C:\wamp64\www\codeigniter_projects\events_registration_app_with_codeigniter\vendor\codeigniter4\framework\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\wamp64\www\codeigniter_projects\events_registration_app_with_codeigniter\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 C:\wamp64\www\codeigniter_projects\events_registration_app_with_codeigniter\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(46): require_once('C:\\wamp64\\www\\c...')
+#9 {main}
+CRITICAL - 2023-01-24 14:34:41 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+in SYSTEMPATH\Database\BaseConnection.php on line 418.
+ 1 SYSTEMPATH\Database\BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1614): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows` FROM `registration`', null, false)
+ 3 APPPATH\Controllers\Reg_and_checkin_data.php(25): CodeIgniter\Database\BaseBuilder->countAll()
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Reg_and_checkin_data->retrieveData()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reg_and_checkin_data))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')

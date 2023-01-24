@@ -49,12 +49,15 @@ class RegistrationController extends ResourceController
                     // 'profile_image' => '/images/'.$newName,
                 ];
 
+                // If inserting in primary table is successful...
                 if($model->insert($primaryData)) {
+
                     // Get the primary key of last inserted data
                     $pk = $model->getInsertID();
 
                     if($pk) {
-
+                        //If the insert was sucessful, then get the ID and check as in the condition
+                        // above
                         $secData = [
                             'attendee_ID' => $pk,
                             'residence_address' => $this->request->getVar('residence_address'),
@@ -64,6 +67,7 @@ class RegistrationController extends ResourceController
                             'experience_level' => $this->request->getVar('experience_level')
                         ];
 
+                        // Insert into meta table
                         $regMetaModel->insert($secData);
 
                         $response = [

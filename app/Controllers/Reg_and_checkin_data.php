@@ -12,6 +12,20 @@ class Reg_and_checkin_data extends BaseController
 {
     public function retrieveData()
     {
-        //
+        $db = \config\Database::connect(); // Get DB
+        $checkin_builder = $db->table('checkin');
+        $regist_builder = $db->table('registration');
+        $reg_meta_builder = $db->table('reg_meta');
+        $response = [];
+
+        // $regModel = new RegistrationModel();
+        // $regMetaModel = new RegistrationMetaModel();
+        // $checkInModel = new CheckinModel();
+
+        echo $regist_builder->countAll();    
+        
+
+
+
     }
 }
