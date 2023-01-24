@@ -51,6 +51,8 @@ $routes->group('dashboard', function ($routes) {
     $routes->get('checked_in', 'DashboardController::checkedIn'); // This route serves the dashboard checkedin page
 });
 
+$routes->get('reg-checkin-data', 'Reg_and_checkin_data::retrieveData');// This route is an enpoint to query the db and retrieve data for registration, checkin
+
 
 /*
  * --------------------------------------------------------------------
