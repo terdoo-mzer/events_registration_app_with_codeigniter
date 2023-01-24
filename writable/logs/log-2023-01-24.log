@@ -1,0 +1,55 @@
+ERROR - 2023-01-24 05:27:09 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'events_mgt' in /var/www/events_registration_app_with_codeigniter/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:171
+Stack trace:
+#0 /var/www/events_registration_app_with_codeigniter/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(171): mysqli->real_connect()
+#1 /var/www/events_registration_app_with_codeigniter/vendor/codeigniter4/framework/system/Database/BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /var/www/events_registration_app_with_codeigniter/vendor/codeigniter4/framework/system/Database/BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+#3 /var/www/events_registration_app_with_codeigniter/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1360): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/events_registration_app_with_codeigniter/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1394): CodeIgniter\Database\BaseConnection->listTables()
+#5 /var/www/events_registration_app_with_codeigniter/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(759): CodeIgniter\Database\BaseConnection->tableExists()
+#6 /var/www/events_registration_app_with_codeigniter/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(639): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /var/www/events_registration_app_with_codeigniter/vendor/codeigniter4/framework/system/Commands/Database/MigrateStatus.php(112): CodeIgniter\Database\MigrationRunner->getHistory()
+#8 /var/www/events_registration_app_with_codeigniter/vendor/codeigniter4/framework/system/CLI/Commands.php(63): CodeIgniter\Commands\Database\MigrateStatus->run()
+#9 /var/www/events_registration_app_with_codeigniter/vendor/codeigniter4/framework/system/CLI/CommandRunner.php(65): CodeIgniter\CLI\Commands->run()
+#10 /var/www/events_registration_app_with_codeigniter/vendor/codeigniter4/framework/system/CLI/CommandRunner.php(51): CodeIgniter\CLI\CommandRunner->index()
+#11 /var/www/events_registration_app_with_codeigniter/vendor/codeigniter4/framework/system/CodeIgniter.php(920): CodeIgniter\CLI\CommandRunner->_remap()
+#12 /var/www/events_registration_app_with_codeigniter/vendor/codeigniter4/framework/system/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+#13 /var/www/events_registration_app_with_codeigniter/vendor/codeigniter4/framework/system/CodeIgniter.php(347): CodeIgniter\CodeIgniter->handleRequest()
+#14 /var/www/events_registration_app_with_codeigniter/vendor/codeigniter4/framework/system/CLI/Console.php(48): CodeIgniter\CodeIgniter->run()
+#15 /var/www/events_registration_app_with_codeigniter/spark(98): CodeIgniter\CLI\Console->run()
+#16 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'events_mgt' in /var/www/events_registration_app_with_codeigniter/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:215
+Stack trace:
+#0 /var/www/events_registration_app_with_codeigniter/vendor/codeigniter4/framework/system/Database/BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /var/www/events_registration_app_with_codeigniter/vendor/codeigniter4/framework/system/Database/BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+#2 /var/www/events_registration_app_with_codeigniter/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1360): CodeIgniter\Database\BaseConnection->query()
+#3 /var/www/events_registration_app_with_codeigniter/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1394): CodeIgniter\Database\BaseConnection->listTables()
+#4 /var/www/events_registration_app_with_codeigniter/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(759): CodeIgniter\Database\BaseConnection->tableExists()
+#5 /var/www/events_registration_app_with_codeigniter/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(639): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 /var/www/events_registration_app_with_codeigniter/vendor/codeigniter4/framework/system/Commands/Database/MigrateStatus.php(112): CodeIgniter\Database\MigrationRunner->getHistory()
+#7 /var/www/events_registration_app_with_codeigniter/vendor/codeigniter4/framework/system/CLI/Commands.php(63): CodeIgniter\Commands\Database\MigrateStatus->run()
+#8 /var/www/events_registration_app_with_codeigniter/vendor/codeigniter4/framework/system/CLI/CommandRunner.php(65): CodeIgniter\CLI\Commands->run()
+#9 /var/www/events_registration_app_with_codeigniter/vendor/codeigniter4/framework/system/CLI/CommandRunner.php(51): CodeIgniter\CLI\CommandRunner->index()
+#10 /var/www/events_registration_app_with_codeigniter/vendor/codeigniter4/framework/system/CodeIgniter.php(920): CodeIgniter\CLI\CommandRunner->_remap()
+#11 /var/www/events_registration_app_with_codeigniter/vendor/codeigniter4/framework/system/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+#12 /var/www/events_registration_app_with_codeigniter/vendor/codeigniter4/framework/system/CodeIgniter.php(347): CodeIgniter\CodeIgniter->handleRequest()
+#13 /var/www/events_registration_app_with_codeigniter/vendor/codeigniter4/framework/system/CLI/Console.php(48): CodeIgniter\CodeIgniter->run()
+#14 /var/www/events_registration_app_with_codeigniter/spark(98): CodeIgniter\CLI\Console->run()
+#15 {main}
+CRITICAL - 2023-01-24 05:27:09 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'events_mgt'
+in SYSTEMPATH/Database/BaseConnection.php on line 418.
+ 1 SYSTEMPATH/Database/BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseConnection.php(1360): CodeIgniter\Database\BaseConnection->query()
+ 3 SYSTEMPATH/Database/BaseConnection.php(1394): CodeIgniter\Database\BaseConnection->listTables()
+ 4 SYSTEMPATH/Database/MigrationRunner.php(759): CodeIgniter\Database\BaseConnection->tableExists()
+ 5 SYSTEMPATH/Database/MigrationRunner.php(639): CodeIgniter\Database\MigrationRunner->ensureTable()
+ 6 SYSTEMPATH/Commands/Database/MigrateStatus.php(112): CodeIgniter\Database\MigrationRunner->getHistory()
+ 7 SYSTEMPATH/CLI/Commands.php(63): CodeIgniter\Commands\Database\MigrateStatus->run()
+ 8 SYSTEMPATH/CLI/CommandRunner.php(65): CodeIgniter\CLI\Commands->run()
+ 9 SYSTEMPATH/CLI/CommandRunner.php(51): CodeIgniter\CLI\CommandRunner->index()
+10 SYSTEMPATH/CodeIgniter.php(920): CodeIgniter\CLI\CommandRunner->_remap()
+11 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(347): CodeIgniter\CodeIgniter->handleRequest()
+13 SYSTEMPATH/CLI/Console.php(48): CodeIgniter\CodeIgniter->run()
+14 ROOTPATH/spark(98): CodeIgniter\CLI\Console->run()
