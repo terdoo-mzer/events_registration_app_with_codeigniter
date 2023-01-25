@@ -43,6 +43,9 @@ class DashboardController extends BaseController
 
 
         $data['result'] = $result;
+
+        echo "<pre>";
+        print_r($data);
         
         echo view('dashboard_templates/header');
         echo view('dashboard/checked_in', $data);
