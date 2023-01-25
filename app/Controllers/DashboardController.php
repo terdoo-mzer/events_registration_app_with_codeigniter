@@ -44,12 +44,12 @@ class DashboardController extends BaseController
 
         // $data['result'] = $result;
 
-        echo "<pre>";
+        // echo "<pre>";
 
-        foreach($result as $key => $value) {
-            echo $key . " " . $value;
-        }
-        print_r($result);
+        // foreach($result as $key => $value) {
+        //     echo $key . " " . $value;
+        // }
+        // print_r($result);
         
         echo view('dashboard_templates/header');
         echo view('dashboard/checked_in', $result);
