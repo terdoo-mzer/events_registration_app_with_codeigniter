@@ -78,7 +78,7 @@ li a:hover {
   font-weight: 500;
 }
 
-.close_btn {
+/* .close_btn {
   position: absolute;
   right: 30%;
   font-size:25px;
@@ -87,7 +87,7 @@ li a:hover {
 }
 .close_btn:hover {
   color: #000;
-}
+} */
 
 .form-container {
   display: flex;
@@ -117,6 +117,7 @@ button {
   border-radius: 25px;
   color: #fff;
   font-size: 16px;
+  cursor: pointer;
 }
 
 .greeting_text h1 {

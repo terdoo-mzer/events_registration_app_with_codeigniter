@@ -8,7 +8,7 @@ use App\Models\RegistrationModel;
 use App\Models\RegistrationMetaModel;
 use App\Models\CheckinModel;
 
-class Reg_and_checkin_data extends BaseController
+class Reg_and_checkin_data extends ResourceController
 {
     public function retrieveData()
     {
@@ -22,10 +22,21 @@ class Reg_and_checkin_data extends BaseController
         // $regMetaModel = new RegistrationMetaModel();
         // $checkInModel = new CheckinModel();
 
-        echo $regist_builder->countAll();    
+        echo $number_registered = $regist_builder->countAll();    
+        echo $number_checked_in = $checkin_builder->countAll();
+
+        $response = [
+            'status' => 200,
+            'message' => "Query Successful!",
+            'error' => false,
+            'data' => [
+                'number_registered' => $number_registered,
+                'number_checkedin' => $number_checked_in
+            ]
+        ];
         
 
 
-
+        return $this->respondCreated($response);
     }
 }
