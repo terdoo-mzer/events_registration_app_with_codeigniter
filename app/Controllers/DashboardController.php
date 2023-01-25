@@ -31,8 +31,15 @@ class DashboardController extends BaseController
 
     public function registered()
     {
+
+        $db = \config\Database::connect(); // Get DB
+        $builder = $db->table('registration');
+
+        $query = $builder->get();
+        $res['result'] = $query->getResultArray();
+
         echo view('dashboard_templates/header');
-        echo view('dashboard/registered');
+        echo view('dashboard/registered', $res);
         echo view('dashboard_templates/footer');
     }
 
