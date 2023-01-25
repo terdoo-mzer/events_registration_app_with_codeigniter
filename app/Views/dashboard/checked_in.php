@@ -12,7 +12,7 @@
 
    <?php
     if (isset($result)) {
-      foreach ($result as $attendee) {
+      foreach ($result as $key => $attendee) {
     ?>
        <tr class="header_item">
          <td><?php echo $attendee; ?></td>
