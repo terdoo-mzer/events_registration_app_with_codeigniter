@@ -40,6 +40,8 @@ class DashboardController extends BaseController
     {
         $checkedIn = new CheckinModel();
         $result = $checkedIn->findAll();
+
+        echo $result;
         
         echo view('dashboard_templates/header');
         echo view('dashboard/checked_in', $result);
