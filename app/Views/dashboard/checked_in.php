@@ -12,10 +12,10 @@
 
    <?php
     if (isset($result)) {
-      foreach ($result as $key => $attendee) {
+      foreach ($result as $attendee) {
     ?>
        <tr class="header_item">
-         <td><?php $attendee; ?></td>
+         <td><?php echo esc($attendee) ?></td>
       </tr>
    <?php
       }
