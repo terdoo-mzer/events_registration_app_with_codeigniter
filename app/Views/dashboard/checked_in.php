@@ -17,7 +17,6 @@
     <td>Sweden</td>
   </tr>
 
-
     <?php
         if(isset($result)) {
           foreach ($result as $attendee) {
