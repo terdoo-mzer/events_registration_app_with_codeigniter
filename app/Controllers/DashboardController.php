@@ -40,7 +40,7 @@ class DashboardController extends BaseController
     {
 
         $db = \config\Database::connect(); // Get DB
-        $builder = $db->table('mytable');
+        $builder = $db->table('checkin');
 
         $query = $builder->get();
         $res = $query->getResultArray();
