@@ -1,22 +1,34 @@
-     <h1>A Fancy Table</h1>
+ 
+<h1>A Fancy Table</h1>
 
 <table id="customers">
   <tr>
-    <th>Company</th>
-    <th>Contact</th>
-    <th>Country</th>
+    <th>S/N</th>
+    <th>Attendee ID</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Phone</th>
+    <th>Email</th>
   </tr>
-  <tr>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
-    <td>Germany</td>
-  </tr>
+
   <tr>
     <td>Berglunds snabbköp</td>
     <td>Christina Berglund</td>
     <td>Sweden</td>
   </tr>
-  <tr>
+
+
+    <?php
+        if(isset($result)) {
+          foreach ($result as $attendee) {
+        echo $attendee;
+
+          }
+        } else {
+          echo "There is no data yet!";
+        }
+    ?>
+  <!-- <tr>
     <td>Centro comercial Moctezuma</td>
     <td>Francisco Chang</td>
     <td>Mexico</td>
@@ -55,5 +67,5 @@
     <td>Paris spécialités</td>
     <td>Marie Bertrand</td>
     <td>France</td>
-  </tr>
+  </tr> -->
 </table>
