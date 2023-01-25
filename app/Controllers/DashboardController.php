@@ -45,19 +45,9 @@ class DashboardController extends BaseController
         $query = $builder->get();
         $res['result'] = $query->getResultArray();
 
-        echo "<pre>";
-
-        print_r($res);
-
-
-        // $data['result'] = $result;
-
         // echo "<pre>";
 
-        // foreach($result as $key => $value) {
-        //     echo $key . " " . $value;
-        // }
-        // print_r($result);
+        // print_r($res);
         
         echo view('dashboard_templates/header');
         echo view('dashboard/checked_in', $res);

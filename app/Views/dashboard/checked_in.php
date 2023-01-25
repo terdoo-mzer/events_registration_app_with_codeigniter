@@ -1,4 +1,4 @@
- <h1>A Fancy Table</h1>
+ <h1>Checked In Participants</h1>
 
  <table id="customers">
    <tr>
