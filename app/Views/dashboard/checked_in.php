@@ -15,7 +15,7 @@
       foreach ($result as $key => $attendee) {
     ?>
        <tr class="header_item">
-         <td><?php echo $attendee; ?></td>
+         <td><?php $attendee; ?></td>
       </tr>
    <?php
       }
