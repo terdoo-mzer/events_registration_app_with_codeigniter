@@ -1,33 +1,27 @@
- 
-<h1>A Fancy Table</h1>
+ <h1>A Fancy Table</h1>
 
-<table id="customers">
-  <tr>
-    <th>S/N</th>
-    <th>Attendee ID</th>
-    <th>First Name</th>
-    <th>Last Name</th>
-    <th>Phone</th>
-    <th>Email</th>
-  </tr>
+ <table id="customers">
+   <tr>
+     <th>S/N</th>
+     <th>Attendee ID</th>
+     <th>First Name</th>
+     <th>Last Name</th>
+     <th>Phone</th>
+     <th>Email</th>
+   </tr>
 
-  <tr>
-    <td>Berglunds snabbköp</td>
-    <td>Christina Berglund</td>
-    <td>Sweden</td>
-  </tr>
-
-    <?php
-        if(isset($result)) {
-          foreach ($result as $attendee) {
-        echo $attendee;
-
-          }
-        } else {
-          echo "There is no data yet!";
-        }
+   <?php
+    if (isset($result)) {
+      foreach ($result as $attendee) {
     ?>
-  <!-- <tr>
+       <tr class="header_item">
+         <td><?php echo $attendee; ?></td>
+      </tr>
+   <?php
+      }
+    }
+    ?>
+   <!-- <tr>
     <td>Centro comercial Moctezuma</td>
     <td>Francisco Chang</td>
     <td>Mexico</td>
@@ -67,4 +61,4 @@
     <td>Marie Bertrand</td>
     <td>France</td>
   </tr> -->
-</table>
+ </table>
