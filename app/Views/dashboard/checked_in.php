@@ -13,15 +13,11 @@
    <?php
     if (isset($result)) {
       foreach ($result as $attendee) {
-       foreach ($attendee as $key1 => $subarray) {
-         ?>
-    
-
+    ?>
        <tr class="header_item">
-         <td><?php echo esc($subarray) ?></td>
+         <td><?php echo $attendee['id'] ?></td>
       </tr>
    <?php
-       }
       }
     }
     ?>

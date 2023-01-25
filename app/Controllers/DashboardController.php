@@ -43,7 +43,7 @@ class DashboardController extends BaseController
         $builder = $db->table('checkin');
 
         $query = $builder->get();
-        $res = $query->getResultArray();
+        $res['result'] = $query->getResultArray();
 
         echo "<pre>";
 
@@ -60,7 +60,7 @@ class DashboardController extends BaseController
         // print_r($result);
         
         echo view('dashboard_templates/header');
-        echo view('dashboard/checked_in');
+        echo view('dashboard/checked_in', $res);
         echo view('dashboard_templates/footer');
     }
 }
