@@ -14,7 +14,7 @@ class DashboardController extends BaseController
 {
 
     // This function serves all the all_records view
-    public function printTable()
+    public function allRecords()
     {
 
 
