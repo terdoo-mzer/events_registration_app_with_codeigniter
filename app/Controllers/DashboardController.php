@@ -38,8 +38,16 @@ class DashboardController extends BaseController
 
     public function checkedIn()
     {
-        $checkedIn = new CheckinModel();
-        $result = $checkedIn->findAll();
+
+        $db = \config\Database::connect(); // Get DB
+        $builder = $db->table('mytable');
+
+        $query = $builder->get();
+        $res = $query->getResultArray();
+
+        echo "<pre>";
+
+        print_r($res);
 
 
         // $data['result'] = $result;
@@ -52,7 +60,7 @@ class DashboardController extends BaseController
         // print_r($result);
         
         echo view('dashboard_templates/header');
-        echo view('dashboard/checked_in', $result);
+        echo view('dashboard/checked_in');
         echo view('dashboard_templates/footer');
     }
 }
