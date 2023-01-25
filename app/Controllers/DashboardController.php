@@ -42,7 +42,7 @@ class DashboardController extends BaseController
         $table = new \CodeIgniter\View\Table();
         $db = \config\Database::connect(); // Get DB
 
-        $query = $db->query('SELECT * FROM checkedIn');
+        $query = $db->query('SELECT * FROM checkin');
 
         $table->setHeading('Attendee ID', 'First Name', 'Last Name', 'Email', 'Phone');
 
