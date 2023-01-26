@@ -93,7 +93,7 @@ class RegistrationController extends ResourceController
                                     </pre>";
                        
 
-                        // $this->sendMail($to, $attendee_ID, $message, $subject);
+                        $this->sendMail($to, $message, $subject);
                         // $this->sendMail();
                     }
                 } else {
@@ -115,14 +115,14 @@ class RegistrationController extends ResourceController
     }
 
     // Create a function to send mail containing participant attendance ID
-    function sendMail() { 
+    function sendMail($to, $message, $subject) { 
         
         $email = \Config\Services::email();
-        $email->setTo('mzerterdoo6@gmail.com');
+        $email->setTo($to);
         $email->setFrom('mzeremmanuel@gmail.com', 'Techies Event Registration');
         
-        $email->setSubject("CodeIgniter Test");
-        $email->setMessage("I am testing Codeigniter");
+        $email->setSubject($subject);
+        $email->setMessage($message);
         if ($email->send()) 
 		{
             echo 'Email successfully sent';

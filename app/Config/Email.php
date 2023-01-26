@@ -61,14 +61,14 @@ class Email extends BaseConfig
      *
      * @var string
      */
-    public $SMTPPass = 'wSsVR60k+EWiWqd8yD38c+s6mQtUA1ikFU5+31Gk7HD8GqzE8cdpkRHHDVWhFPkYRGJuQjQW9+ounUsGh2Vb29x8zl5VWiiF9mqRe1U4J3x17qnvhDzIXGlZlReJLowLwwVqmmRmEcEi+g==';
+    public $SMTPPass = 'wSsVR61x8h7zXKt9lT2pLusxnF1WVQn+Ekov0QCiviWpGfvHp8c8xBbKUVSmSvEcGDFsF2cRo7IunkpWhmcI2Y8swlFUCSiF9mqRe1U4J3x17qnvhDzNX2xYlxaIJYMKxw5okmdjF8hu';
 
     /**
      * SMTP Port
      *
      * @var int
      */
-    public $SMTPPort = 587;
+    public $SMTPPort = 465;
 
     /**
      * SMTP Timeout (in seconds)
@@ -89,7 +89,7 @@ class Email extends BaseConfig
      *
      * @var string
      */
-    public $SMTPCrypto = 'tls';
+    public $SMTPCrypto = 'ssl';
 
     /**
      * Enable word-wrap
