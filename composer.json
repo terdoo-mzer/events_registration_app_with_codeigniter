@@ -1,5 +1,6 @@
 {
     "require": {
-        "codeigniter4/framework": "^4.2"
+        "codeigniter4/framework": "^4.2",
+        "phpmailer/phpmailer": "^6.7"
     }
 }
