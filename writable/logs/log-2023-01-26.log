@@ -1,0 +1,38 @@
+ERROR - 2023-01-26 06:05:17 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2023-01-26 06:05:17 --> 220 mx.zohomail.com SMTP Server ready January 26, 2023 4:05:16 AM PST
+
+hello: 250-mx.zohomail.com Hello squash-it.com.ng (ec2-35-174-86-22.compute-1.amazonaws.com (35.174.86.22))
+250-AUTH LOGIN PLAIN
+250 SIZE 53477376
+
+from: 250 Sender <mzeremmanuel@gmail.com> OK
+
+to: 250 Recipient <terdoomzer@gmail.com> OK
+
+data: 354 Ok Send data ending with <CRLF>.<CRLF>
+
+553 Relaying disallowed as mzeremmanuel@gmail.com
+
+reset: 
+The following SMTP error was encountered: 
+The following SMTP error was encountered: 553 Relaying disallowed as mzeremmanuel@gmail.com
+
+ERROR - 2023-01-26 06:09:57 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2023-01-26 06:09:57 --> 220 mx.zohomail.com SMTP Server ready January 26, 2023 4:09:56 AM PST
+
+hello: 250-mx.zohomail.com Hello squash-it.com.ng (ec2-35-174-86-22.compute-1.amazonaws.com (35.174.86.22))
+250-AUTH LOGIN PLAIN
+250 SIZE 53477376
+
+from: 250 Sender <mzeremmanuel@gmail.com> OK
+
+to: 250 Recipient <mzeremmanuel@gmail.com> OK
+
+data: 354 Ok Send data ending with <CRLF>.<CRLF>
+
+553 Relaying disallowed as mzeremmanuel@gmail.com
+
+reset: 
+The following SMTP error was encountered: 
+The following SMTP error was encountered: 553 Relaying disallowed as mzeremmanuel@gmail.com
+
