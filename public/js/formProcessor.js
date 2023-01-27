@@ -12,6 +12,7 @@ btn.addEventListener('click', (e) => {
 const register = async () => {
    try {
       let response = await fetch('http://squash-it.com.ng/create-reservation', {
+         // http://localhost:8080/create-reservation
          method: 'POST',
          body: new FormData(form),
       });

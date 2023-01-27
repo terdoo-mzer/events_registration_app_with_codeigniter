@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ERROR - 2023-01-26 06:05:17 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
 ERROR - 2023-01-26 06:05:17 --> 220 mx.zohomail.com SMTP Server ready January 26, 2023 4:05:16 AM PST
 
@@ -36,3 +37,114 @@ reset:
 The following SMTP error was encountered: 
 The following SMTP error was encountered: 553 Relaying disallowed as mzeremmanuel@gmail.com
 
+=======
+ERROR - 2023-01-26 06:34:13 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2023-01-26 06:34:13 --> 220 mx.zohomail.com SMTP Server ready January 26, 2023 4:34:09 AM PST
+
+hello: 250-mx.zohomail.com Hello localhost (197.210.79.76 (197.210.79.76))
+250-AUTH LOGIN PLAIN
+250 SIZE 53477376
+
+from: 250 Sender <mzeremmanuel@gmail.com> OK
+
+to: 250 Recipient <mzeremmanuel@gmail.com> OK
+
+data: 354 Ok Send data ending with <CRLF>.<CRLF>
+
+553 Relaying disallowed as mzeremmanuel@gmail.com
+
+reset: 
+The following SMTP error was encountered: 
+The following SMTP error was encountered: 553 Relaying disallowed as mzeremmanuel@gmail.com
+
+ERROR - 2023-01-26 06:37:22 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2023-01-26 06:37:22 --> 220 mx.zohomail.com SMTP Server ready January 26, 2023 4:37:19 AM PST
+
+hello: 250-mx.zohomail.com Hello localhost (197.210.79.165 (197.210.79.165))
+250-AUTH LOGIN PLAIN
+250 SIZE 53477376
+
+from: 250 Sender <mzeremmanuel@gmail.com> OK
+
+to: 250 Recipient <terdoomzer@gmail.com> OK
+
+data: 354 Ok Send data ending with <CRLF>.<CRLF>
+
+553 Relaying disallowed as mzeremmanuel@gmail.com
+
+reset: 
+The following SMTP error was encountered: 
+The following SMTP error was encountered: 553 Relaying disallowed as mzeremmanuel@gmail.com
+
+ERROR - 2023-01-26 06:37:58 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2023-01-26 06:37:58 --> 220 mx.zohomail.com SMTP Server ready January 26, 2023 4:37:55 AM PST
+
+hello: 250-mx.zohomail.com Hello localhost (197.210.85.145 (197.210.85.145))
+250-AUTH LOGIN PLAIN
+250 SIZE 53477376
+
+from: 250 Sender <mzeremmanuel@gmail.com> OK
+
+to: 250 Recipient <terdoomzaar@gmail.com> OK
+
+data: 354 Ok Send data ending with <CRLF>.<CRLF>
+
+553 Relaying disallowed as mzeremmanuel@gmail.com
+
+reset: 
+The following SMTP error was encountered: 
+The following SMTP error was encountered: 553 Relaying disallowed as mzeremmanuel@gmail.com
+
+ERROR - 2023-01-26 06:48:12 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2023-01-26 06:48:12 --> 220 mx.zohomail.com SMTP Server ready January 26, 2023 4:48:09 AM PST
+
+hello: 250-mx.zohomail.com Hello localhost (197.210.85.145 (197.210.85.145))
+250-AUTH LOGIN PLAIN
+250 SIZE 53477376
+
+from: 250 Sender <mzeremmanuel@gmail.com> OK
+
+to: 250 Recipient <mzerterdoo6@gmail.com> OK
+
+data: 354 Ok Send data ending with <CRLF>.<CRLF>
+
+553 Relaying disallowed as mzeremmanuel@gmail.com
+
+reset: 
+The following SMTP error was encountered: 
+The following SMTP error was encountered: 553 Relaying disallowed as mzeremmanuel@gmail.com
+
+ERROR - 2023-01-26 08:41:06 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2023-01-26 08:41:06 --> 220 mx.zohomail.com SMTP Server ready January 26, 2023 6:41:03 AM PST
+
+hello: 250-mx.zohomail.com Hello localhost (197.210.79.165 (197.210.79.165))
+250-AUTH LOGIN PLAIN
+250 SIZE 53477376
+
+from: 250 Sender <mzeremmanuel@gmail.com> OK
+
+to: 250 Recipient <mzerterdoo6@gmail.com> OK
+
+data: 354 Ok Send data ending with <CRLF>.<CRLF>
+
+553 Relaying disallowed as mzeremmanuel@gmail.com
+
+reset: 
+The following SMTP error was encountered: 
+The following SMTP error was encountered: 553 Relaying disallowed as mzeremmanuel@gmail.com
+
+CRITICAL - 2023-01-26 09:51:49 --> Class "PHPMailer\PHPMailer\PHPMailer" not found
+in APPPATH\Controllers\RegistrationController.php on line 93.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\RegistrationController->register()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegistrationController))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')
+CRITICAL - 2023-01-26 09:53:57 --> Class "PHPMailer\PHPMailer\PHPMailer" not found
+in APPPATH\Controllers\RegistrationController.php on line 93.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\RegistrationController->register()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegistrationController))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')
+>>>>>>> 6e13fcc75511df80d410c3281dbf6d09d642242f
