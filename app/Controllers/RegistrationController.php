@@ -2,6 +2,10 @@
 
 namespace App\Controllers;
 
+require '../vendor/autoload.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+
 use CodeIgniter\RESTful\ResourceController;
 
 use App\Models\RegistrationModel;
@@ -70,6 +74,56 @@ class RegistrationController extends ResourceController
                         // Insert into meta table
                         $regMetaModel->insert($secData);
 
+                        $attendeeName = $primaryData['first_name'];
+                        $to = $primaryData['email'];
+                        $attendee_ID = $pk;
+                        $subject = 'Techies Event';
+                        $message = "<pre>
+                                           Hello $attendeeName,
+                                           
+                                           You have successfully registered for the Techies Event 2023.
+
+                                           Here is your event <b>ID: $attendee_ID</b>.
+
+                                           You will be required to present the ID at the venue to be checked in.
+
+                                           Good luck!
+                                    </pre>";
+
+
+                        $mail = new PHPMailer();
+                        $mail->Encoding = "base64";
+                        $mail->SMTPAuth = true;
+                        $mail->Host = "smtp.zeptomail.com";
+                        // $mail->Port = 587;
+                        $mail->Port = 465;
+                        $mail->Username = "emailapikey";
+                        $mail->Password = 'wSsVR61x8h7zXKt9lT2pLusxnF1WVQn+Ekov0QCiviWpGfvHp8c8xBbKUVSmSvEcGDFsF2cRo7IunkpWhmcI2Y8swlFUCSiF9mqRe1U4J3x17qnvhDzNX2xYlxaIJYMKxw5okmdjF8hu';
+                        // $mail->SMTPSecure = 'TLS';
+                        $mail->SMTPSecure = 'ssl';
+                        $mail->isSMTP();
+                        $mail->IsHTML(true);
+                        $mail->CharSet = "UTF-8";
+                        $mail->From = "noreply@squash-it.com.ng";
+                        $mail->addAddress($to);
+                        $mail->Body = $message;
+                        $mail->Subject = $subject;
+                        $mail->SMTPDebug = 1;
+                        $mail->Debugoutput = function ($str, $level) {
+                            echo "debug level $level; message: $str";
+                            echo "<br>";
+                            
+                        };
+                        $mail->Send();
+                        // if (!$mail->Send()) {
+                        //     echo "Mail sending failed";
+                        // } else {
+                        //     echo "Successfully sent";
+                        // }
+                       
+
+                        // $this->sendMail($to, $message, $subject);
+
                         $response = [
                             'status' => 200,
                             'message' => 'You have been succesfully registered for this event. Please check your email
@@ -78,22 +132,7 @@ class RegistrationController extends ResourceController
                             'data' => []
                         ];
 
-                        $attendeeName = $primaryData['first_name'];
-                        $to = $primaryData['email'];
-                        $attendee_ID = $pk;
-                        $subject = 'Techies Event Registration';
-                        $message = "<pre>
-                                           Hello $attendeeName,
-                                           
-                                           You have successfully registered for the Techies Event 2022.
-
-                                           Here is your reservation ID $attendee_ID.
-
-                                           You will be required to present the ID at the venue to be checked in as an attendee.
-                                    </pre>";
-                       
-
-                        $this->sendMail($to, $message, $subject);
+                      
                         // $this->sendMail();
                     }
                 } else {

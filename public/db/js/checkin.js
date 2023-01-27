@@ -54,6 +54,7 @@ checkinBtn.addEventListener('click', (e) => {
 const checkIn = async () => {
   try {
     let response = await fetch('http://squash-it.com.ng/dashboard/check-in', {
+      // http://localhost:8080/dashboard/check-in
       method: 'POST',
       body: new FormData(checkinForm),
     });
