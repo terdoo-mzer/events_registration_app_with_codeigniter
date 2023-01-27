@@ -46,6 +46,7 @@ $routes->match(['post', 'get'],'/register', 'PagesRenderer::formPage'); // This 
 // Admin Dashboard routes
 $routes->group('dashboard', function ($routes) {
     $routes->post('check-in', 'CheckinController::checkin'); // This will be an api endpoint for the checkin form
+    $routes->get('/', 'DashboardController::allRecords'); // This route serves the dashnoard home page
     $routes->get('main', 'DashboardController::allRecords'); // This route serves the dashnoard home page
     $routes->get('registered', 'DashboardController::registered'); // This route serves the dashboard registered page
     $routes->get('checked_in', 'DashboardController::checkedIn'); // This route serves the dashboard checkedin page
