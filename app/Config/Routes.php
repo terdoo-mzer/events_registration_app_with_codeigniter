@@ -45,14 +45,35 @@ $routes->match(['post', 'get'],'/register', 'PagesRenderer::formPage'); // This 
 
 // Admin Dashboard routes
 $routes->group('dashboard', function ($routes) {
-    $routes->post('check-in', 'CheckinController::checkin'); // This will be an api endpoint for the checkin form
-    $routes->get('/', 'DashboardController::allRecords'); // This route serves the dashnoard home page
-    $routes->get('main', 'DashboardController::allRecords'); // This route serves the dashnoard home page
-    $routes->get('registered', 'DashboardController::registered'); // This route serves the dashboard registered page
-    $routes->get('checked_in', 'DashboardController::checkedIn'); // This route serves the dashboard checkedin page
+    $routes->post('check-in', 'CheckinController::checkin', ['filter' => 'authGuard']); // This will be an api endpoint for the checkin form
+    $routes->get('/', 'DashboardController::allRecords', ['filter' => 'authGuard']); // This route serves the dashnoard home page
+    $routes->get('main', 'DashboardController::allRecords', ['filter' => 'authGuard']); // This route serves the dashnoard home page
+    $routes->get('registered', 'DashboardController::registered', ['filter' => 'authGuard']); // This route serves the dashboard registered page
+    $routes->get('checked_in', 'DashboardController::checkedIn', ['filter' => 'authGuard']); // This route serves the dashboard checkedin page
+   
 });
 
-$routes->get('reg-checkin-data', 'Reg_and_checkin_data::retrieveData');// This route is an enpoint to query the db and retrieve data for registration, checkin
+// Auth routes
+$routes->get('auth/signup', 'Auth::signup');
+$routes->get('auth/login', 'Auth::index');
+
+$routes->match(['get', 'post'], 'Auth/store', 'Auth::store');
+$routes->match(['get', 'post'], 'Auth/loginAuth', 'Auth::loginAuth');
+
+$routes->get('logout', 'Auth::logout'); 
+// End Auth routes
+
+
+
+// Protect Dashboard Routes
+$routes->get('/', 'DashboardController::allRecords', ['filter' => 'authGuard']); 
+$routes->get('main', 'DashboardController::allRecords', ['filter' => 'authGuard']); 
+$routes->get('registered', 'DashboardController::registered', ['filter' => 'authGuard']); 
+$routes->get('checked_in', 'DashboardController::checkedIn', ['filter' => 'authGuard']); 
+// End Dashboard routes
+
+// Dashboard logs endpoint
+$routes->get('reg-checkin-data', 'Reg_and_checkin_log::retrieveData');// This route is an enpoint to query the db and retrieve data for registration, checkin
 
 
 /*
