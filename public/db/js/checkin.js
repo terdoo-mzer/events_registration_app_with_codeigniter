@@ -2,6 +2,11 @@
 const checkinForm = document.querySelector("#checkinForm");
 const checkinBtn = document.querySelector('#checkin');
 
+// Output Dashboard logs using the elements
+const registered_num = document.querySelector("#registered_num");
+const checkedin_num = document.querySelector("#checkedin_num");
+const reg_checked_diff = document.querySelector("#reg_checked_diff");
+
 const Toast = Swal.mixin({
   toast: true,
   position: 'top-end',
@@ -53,8 +58,8 @@ checkinBtn.addEventListener('click', (e) => {
 
 const checkIn = async () => {
   try {
-    let response = await fetch('http://squash-it.com.ng/dashboard/check-in', {
-      // http://localhost:8080/dashboard/check-in
+    // let response = await fetch('http://squash-it.com.ng/dashboard/check-in', {
+    let response = await fetch('http://localhost:8080/dashboard/check-in', {
       method: 'POST',
       body: new FormData(checkinForm),
     });
@@ -71,7 +76,7 @@ const checkIn = async () => {
       })
 
       checkinForm.reset();
-    } else if(result.status === 400) {
+    } else if (result.status === 400) {
       const checkin_error_div = document.querySelector('.checkin_error');
 
 
@@ -80,7 +85,7 @@ const checkIn = async () => {
 
       checkin_error_div.innerHTML += `<p>${result.message}</p>`;
 
-      setTimeout(function(){checkin_error_div.style.display = "none"}, 10000);
+      setTimeout(function () { checkin_error_div.style.display = "none" }, 10000);
     }
   } catch (error) {
     console.error();
@@ -88,12 +93,34 @@ const checkIn = async () => {
 
 }
 
-// const close_btn = document.querySelector('.close_btn');
-  
-//  function closeErrorBox() {
-  
-//   var x = close_btn.parentElement;
-//   x.style.display = "none";
-// }
+function outputLogs() {
+     fetch('http://localhost:8080/reg-checkin-data')
+     .then(response => {
+      // console.log(response);
+      return response.json();
+     })
+     .then(result => {
+      // console.log(result);
 
+        if(result.status === 200) {
 
+            const registered = result.data.number_registered;
+            const checkedIn = result.data.number_checkedin;
+
+            // output the values to the DOM
+            registered_num.innerHTML = registered;
+            checkedin_num.innerHTML = checkedIn;
+
+            reg_checked_diff.innerHTML = registered - checkedIn;
+
+        } else {
+          console.log('There are no logs at the monment')
+        }
+     })
+
+     console.log('1234');
+}
+
+outputLogs();
+
+// setInterval(outputLogs, 4000);
