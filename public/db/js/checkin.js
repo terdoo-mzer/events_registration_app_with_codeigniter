@@ -58,8 +58,8 @@ checkinBtn.addEventListener('click', (e) => {
 
 const checkIn = async () => {
   try {
-    // let response = await fetch('http://squash-it.com.ng/dashboard/check-in', {
-    let response = await fetch('http://localhost:8080/dashboard/check-in', {
+    let response = await fetch('http://squash-it.com.ng/dashboard/check-in', {
+    // let response = await fetch('http://localhost:8080/dashboard/check-in', {
       method: 'POST',
       body: new FormData(checkinForm),
     });
@@ -94,7 +94,8 @@ const checkIn = async () => {
 }
 
 function outputLogs() {
-     fetch('http://localhost:8080/reg-checkin-data')
+    //  fetch('http://localhost:8080/reg-checkin-data')
+     fetch('http://squash-it.com.ng/reg-checkin-data')
      .then(response => {
       // console.log(response);
       return response.json();
@@ -121,6 +122,6 @@ function outputLogs() {
      console.log('1234');
 }
 
-outputLogs();
+// outputLogs();
 
-// setInterval(outputLogs, 4000);
+setInterval(outputLogs, 5000);
