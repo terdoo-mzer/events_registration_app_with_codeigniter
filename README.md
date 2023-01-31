@@ -1,6 +1,6 @@
 # events_registration_app_with_codeigniter
 This branch will utilize a full api-based development approach.
--- User-end 
+- - User-end 
 - Form registration and handling module
 - - Dashboard
 - Admin Signup Module
